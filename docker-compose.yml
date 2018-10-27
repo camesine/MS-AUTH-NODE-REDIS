@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+     - "8080:8080"
+    container_name: "ms-auth"
+    depends_on:
+      - redis
+    networks:
+      - redis-net
+  redis:
+    image: "redis"
+    ports:
+      - "6379:6379"
+    networks:
+      - redis-net
+    container_name: "redis-provider"
+networks:
+  redis-net:
+    driver: bridge

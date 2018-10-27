@@ -1,0 +1,5 @@
+module.exports = {
+    TTL: 60*30,
+    SECRET: "CAMARONCARAMELOCARAMELOCAMARON",
+    PORT: 8080
+};
